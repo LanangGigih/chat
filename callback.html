@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Berhasil</title>
+    <script>
+        window.onload = function () {
+            const hash = window.location.hash.substring(1);
+            const params = new URLSearchParams(hash);
+            const token = params.get("access_token");
+
+            if (token) {
+                alert("Login berhasil! Salin token ini ke WhatsApp.");
+                document.getElementById("token").textContent = token;
+            } else {
+                alert("Gagal mendapatkan token.");
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Login Berhasil ✅</h1>
+    <p>Salin token ini dan kirim ke WhatsApp:</p>
+    <pre id="token"></pre>
+</body>
+</html>
